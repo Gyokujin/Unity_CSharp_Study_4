@@ -1,0 +1,33 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class A // 클래스 : 데이터들의 모음. 그릇이라고 보면 된다.
+{
+    int a = 100;
+}
+
+public class Variable : MonoBehaviour
+{
+    // 1 + x = 101
+    // 숫자 1 : 상수
+    // x : 변수 : 어떤 값을 넣느냐에 따라 달라진다. 이때 변수는 값이 아닌 값의 주소를 의미한다.
+    int x = 100; // int : 정수
+    int y = 100;
+    int sum;
+
+    void Start()
+    {
+        print(x);
+
+        x = -500;
+        print(x);
+
+        x = x - 500;
+        print(x);
+
+        sum = x + y;
+        print(sum);
+        print(-sum);
+    }
+}
