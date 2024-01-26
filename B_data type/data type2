@@ -1,0 +1,40 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DataType2 : MonoBehaviour
+{
+    int a = 100;
+    float b = 100.15f;
+
+    int sum;
+    float sum2;
+
+    string c;
+
+    int d;
+    string e = "100";
+
+    ushort au = 55000;
+
+    bool aaaa = true;
+    bool bbbb = false;
+
+    void Start()
+    {
+        sum = (int)(a + b);
+        sum2 = a + b;
+
+        Debug.Log(sum);
+        Debug.Log(sum2);
+
+        c = a.ToString();
+        Debug.Log(c);
+
+        d = int.Parse(e);
+        Debug.Log(d);
+
+        au += 20000; // ushort의 범위를 넘어서면 0으로 초기화되며 다시 연산된다. (오버플로)
+        Debug.Log(au);
+    }
+}
