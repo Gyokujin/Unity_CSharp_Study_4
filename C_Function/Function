@@ -1,0 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Function : MonoBehaviour
+{
+    int intValue;
+    float floatValue = 10.5f;
+    float floatValue2 = 20.5f;
+
+    void FloatToInt(float parameter, float parameter2, string stringParm = "디폴트")
+    {
+        intValue = (int)(parameter + parameter2);
+        print(intValue);
+        print(stringParm);
+    }
+
+    int FloatToInt2()
+    {
+        return Multiply((int)(floatValue + floatValue2));
+    }
+
+    int Multiply(int parameter)
+    {
+        return parameter * parameter;
+    }
+
+    void Start()
+    {
+        FloatToInt(floatValue, floatValue2);
+
+        intValue = FloatToInt2();
+        print(intValue);
+    }
+}
