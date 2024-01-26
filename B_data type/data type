@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DataType : MonoBehaviour
+{
+    int a = 40000;
+    sbyte b = 127;
+    byte c1 = 255;
+
+    // byte 정수 자료형 (0 ~ 255) 1바이트
+    // sbyte 정수 자료형 (-128 ~ 127) 1바이트
+    // short 정수 자료형 (-30000 ~ 30000) - 2바이트
+    // integer 정수 자료형 (-2,000,000,000 ~ 2,000,000,000) - 4바이트
+    // long 정수 자료형 - 8바이트
+
+    float f = 4.000001f;
+    double d = 4.000001;
+    decimal m = 4.000001m;
+
+    // float 실수 자료형
+    // double 실수 자료형. float보다 더 정확하다.
+    // decimal 실수 자료형. double보다 더 정확하다. 오차가 없다고 봐도 무방
+
+    string s = "123123asedfe";
+    char c2 = 'D';
+
+    // string 문자 자료형
+    // char 문자 자료형. 한 글자만 가능(유니코드)
+}
