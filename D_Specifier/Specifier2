@@ -1,0 +1,52 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SpecifierTest2
+{
+    private int a;
+    public int b;
+    public static int c; // static : 공유자원.
+
+    public void Abc()
+    {
+        Debug.Log("ABC");
+    }
+
+    private void Abc2()
+    {
+        Debug.Log("ABC2");
+    }
+}
+
+public class Specifier2 : MonoBehaviour
+{
+    SpecifierTest2 aaa = new SpecifierTest2();
+    SpecifierTest2 test1 = new SpecifierTest2();
+    SpecifierTest2 test2 = new SpecifierTest2();
+    SpecifierTest2 test3 = new SpecifierTest2();
+
+    void Start()
+    {
+        Abc();
+    }
+
+    void Abc()
+    {
+        aaa.b = 5;
+        print(aaa.b);
+
+        aaa.Abc();
+
+        test1.b = 5;
+        test2.b = 1;
+        test3.b = 10;
+
+        print(test1.b);
+        print(test2.b);
+        print(test3.b);
+
+        SpecifierTest2.c = 100; // static 변수이기 때문에 클래스에서 바로 접근이 가능하다.
+        print(SpecifierTest2.c);
+    }
+}
