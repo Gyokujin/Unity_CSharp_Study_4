@@ -1,0 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Collection4 : MonoBehaviour
+{
+    // Queue : 선입선출의 특징을 지닌 자료구조
+    Queue<int> queue1 = new Queue<int>();
+
+    void Start()
+    {
+        queue1.Enqueue(5); // Enqueue : 해당 자료를 가장 마지막 자리에 추가한다. 5
+        queue1.Enqueue(10); // 5, 10
+
+        print(queue1.Dequeue()); // Dequeue : 첫번째 자료를 출력한다. 이후 해당값은 삭제된다. 10
+        queue1.Enqueue(20); // 10, 20
+        queue1.Enqueue(30); // 10, 20, 30
+        queue1.Enqueue(40); // 10, 20, 30, 40
+        queue1.Enqueue(50); // 10, 20, 30, 40, 50
+
+        Debug.Log(queue1.Count);
+
+        for (int i = 0; i < 5; i++)
+        {
+            Debug.Log(i + " = " + queue1.Dequeue());
+        }
+
+        if (queue1.Count != 0)
+            queue1.Dequeue();
+    }
+}
