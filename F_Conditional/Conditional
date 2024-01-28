@@ -1,0 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Conditional : MonoBehaviour
+{
+    int input = 15;
+    int num = 15;
+
+    bool result;
+
+    void Start()
+    {
+        if (input > num)
+        {
+            print("input의 값이 num보다 큽니다.");
+        }
+        else if (input == num)
+        {
+            print("input의 값이 num과 같습니다.");
+        }
+        else if (input < num)
+        {
+            print("input의 값이 num보다 작습니다.");
+        }
+        else
+        {
+            print("그밖의 경우");
+        }
+    }
+}
