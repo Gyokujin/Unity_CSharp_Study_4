@@ -1,0 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Collection2 : MonoBehaviour
+{
+    // HashTable
+    Hashtable hashTable = new Hashtable(); // key 자료를 저장하는 배열
+
+    void Start()
+    {
+        hashTable.Add("만", 10000);
+        hashTable.Add("백만", 1000000);
+
+        print(hashTable["만"]); // index가 아닌 key로 값을 찾는다.
+        print(hashTable["백만"]);
+    }
+}
