@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Conditional2 : MonoBehaviour
+{
+    int input = 16;
+    int num = 10;
+
+    bool result;
+
+    void Start()
+    {
+        switch (input)
+        {
+            case 10:
+                print("input의 값이 10입니다.");
+                break;
+            case 11:
+                print("input의 값이 11이 맞습니다.");
+                break;
+            default:
+                print("그외의 값입니다.");
+                break;
+        }
+
+        int temp = input == num ? 50 : 100; // 삼항 연산자 ? 왼쪽의 식이 참일 경우 첫번째 값을 거짓일 경우 두번째 값을 대입한다.
+        print(temp);
+    }
+}
