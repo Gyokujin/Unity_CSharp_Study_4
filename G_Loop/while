@@ -1,0 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class While : MonoBehaviour
+{
+    int num = 0;
+
+    void Start()
+    {
+        while (num < 10) // while문(반복 횟수가 명확하지 않을때) : 조건이 참일경우 반복. 반복문을 끝내지 못할 경우 무한 루프가 될수도 있기 때문에 주의해야 한다.
+        {
+            num++;
+
+            print(num);
+        }
+    }
+}
