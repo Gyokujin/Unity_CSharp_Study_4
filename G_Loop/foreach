@@ -1,0 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Foreach : MonoBehaviour
+{
+    string text = "가나다라마바사";
+
+    void Start()
+    {
+        foreach (char a in text) // in 우측에는 배열을 하나 선언, 좌측에는 배열의 자료를 담을 변수를 선언하고 배열의 첫번째부터 마지막까지 하나씩 순회한다.
+        {
+            print(a);
+        }
+    }
+}
