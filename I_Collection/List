@@ -1,0 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class List : MonoBehaviour
+{
+    // List : 자료형을 통일한 배열
+    List<int> list = new List<int>();
+
+    void Start()
+    {
+        list.Add(3);
+        list.Add(5);
+
+        foreach (int num in list)
+        {
+            Debug.Log(num);
+        }
+    }
+}
