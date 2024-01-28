@@ -1,0 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DoWhile : MonoBehaviour
+{
+    int num = 0;
+
+    void Start()
+    {
+        do // do while문 : do 내의 내용을 실행하고 while의 조건을 비교. 참이면 do를 반복, 거짓이면 종료한다.
+        {
+            num++;
+            print(num);
+        } while (num < 10);
+    }
+}
