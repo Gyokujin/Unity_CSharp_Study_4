@@ -1,0 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Collection3 : MonoBehaviour
+{
+    // Dictionary : key와 value로 자료를 저장하는 배열
+    Dictionary<string, int> dic = new Dictionary<string, int>();
+
+    void Start()
+    {
+        dic.Add("첫번째", 1);
+        dic.Add("두번째", 2);
+        dic.Add("세번째", 4);
+        dic.Add("네번째", 8);
+        dic.Add("다섯번째", 16);
+
+        foreach (var num in dic)
+        {
+            Debug.Log(num);
+        }
+    }
+}
