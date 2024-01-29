@@ -1,0 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Delegate2 : MonoBehaviour
+{
+    public void Abc(int value)
+    {
+        print(value + "값이 증가했습니다.");
+    }
+
+    void Start()
+    {
+        Delegate.OnStart += Abc;
+    }
+}
