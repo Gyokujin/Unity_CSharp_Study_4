@@ -1,0 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public struct StructTest2
+{
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+
+    public StructTest2(int _a, int _b, int _c, int _d) // 생성자 : 구조체와 이름이 같으면 선언시에 자동 실행된다.
+    {
+        a = _a;
+        b = _b;
+        c = _c;
+        d = _d;
+    }
+}
+
+public class Struct2 : MonoBehaviour
+{
+    StructTest2 structTest = new StructTest2(1, 2, 3, 4); // StructTest2 를 선언하면서 내부의 메서드가 자동 실행된다.
+
+    void Start()
+    {
+        print(structTest.a);
+        print(structTest.b);
+        print(structTest.c);
+        print(structTest.d);
+    }
+}
