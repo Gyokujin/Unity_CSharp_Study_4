@@ -1,0 +1,45 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Delegate : MonoBehaviour
+{
+    public delegate void ChainFunc(int value);
+    public static event ChainFunc OnStart;
+    ChainFunc chain;
+
+    int power;
+    int defence;
+
+    public void SetPower(int value)
+    {
+        power += value;
+        print("power의 값이" + value + "만큼 증가했습니다. 총 power의 값 = " + power);
+    }
+
+    public void SetDefence(int value) // SetPower와 같은 구조이기 때문에 따로 선언하는 건 비효율적이다.
+    {
+        defence += value;
+        print("defence의 값이" + value + "만큼 증가했습니다. 총 defence의 값 = " + defence);
+    }
+
+    void Start()
+    {
+        chain += SetPower;
+        chain += SetDefence;
+
+        chain(5); // 두 함수를 모아놓고 동시에 실행한다.
+        chain -= SetDefence;
+
+        if (chain != null)
+            chain(2);
+
+        OnStart += SetPower; // 추가할 함수와 같은 형식이어야 한다.
+        OnStart += SetDefence;
+    }
+
+    void OnDisable()
+    {
+        OnStart(5);
+    }
+}
