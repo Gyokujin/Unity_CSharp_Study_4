@@ -1,0 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public enum Item // enum : 열거형
+{
+    Weapon, // 각각의 자료는 숫자를 가지고 있다. 0
+    Shield, // 1
+    Potion, // 2
+}
+
+public class Enum : MonoBehaviour
+{
+    Item item;
+
+    void Start()
+    {
+        item = Item.Potion;
+        item = Item.Shield;
+
+        print(item);
+    }
+}
