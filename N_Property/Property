@@ -1,0 +1,24 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Property : MonoBehaviour
+{
+    private int salary;
+    private int bonus = 10;
+    public int SalaryP { get { return salary + bonus; } private set { if (value < 0) salary = 0; else salary = value; } } // 프로퍼티 : 입력과 출력에 조건을 둘 수 있다.
+
+    public int Level { get; set; } // get set 프로퍼티 간단하게 자동완성으로 구현 가능하다.
+
+    void Start()
+    {
+        salary = -5;
+        print(SalaryP);
+
+        salary = 10;
+        print(SalaryP);
+
+        Level = 4;
+        print(Level);
+    }
+}
