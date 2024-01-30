@@ -1,0 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GenericT : MonoBehaviour
+{
+    void Print(int value)
+    {
+        print(value);
+    }
+
+    void Print(string value)
+    {
+        print(value);
+    }
+
+    void Print(float value)
+    {
+        print(value);
+    }
+
+    void Start()
+    {
+        Print("abc"); // 같은 이름의 다른 매개변수 타입을 받는 함수라면 별도로 호출이 가능하다.
+        Print(4.5f);
+    }
+}
