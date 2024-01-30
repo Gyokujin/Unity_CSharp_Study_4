@@ -1,0 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+abstract public class Inheritance : MonoBehaviour // abstract : 추상 클래스. 추상 함수를 사용하기 위해 선언한다.
+{
+    protected string humaneName; // protected : public과 다르게 상속 받은 자식 클래스만 사용 가능하다.
+    protected int humanAge;
+
+    protected virtual void Info() // 가상 함수 : 부모 클래스에서 이미 있는 함수를 자식 클래스에서 재정의 가능하도록 한다.
+    {
+        print("나는 인간입니다.");
+    }
+
+    abstract protected void Name(); // 추상 함수 : 추상 클래스에서 함수의 이름만 선언하고 자식 클래스에서 정의한다. 자식 클래스에서 반드시 정의해야 할 때 사용한다.
+}
