@@ -1,0 +1,42 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ABC<T>
+{
+    public T var;
+    public T[] array;
+}
+
+public class GenericT2 : MonoBehaviour
+{
+    ABC<string> abc = new ABC<string>(); // T로 지정한 타 클래스의 변수의 타입을 새로 지정 가능하다.
+    ABC<int> def = new ABC<int>(); // 한 클래스에서 두가지 타입으로 선언 가능하다.
+
+    void Print<T>(T value) // <> 로 형식 매개 변수를 선언하면 자료형에 관계없이 선언된다. 불특정 타입의 매개변수를 받을 때 사용한다.
+    {
+        print(value);
+    }
+
+    void Print2<T>(T value) where T : class
+    {
+
+    }
+
+    void Start()
+    {
+        Print<int>(45); // 매개변수의 자료형을 선언한 후 값을 입력하면 값에 알맞게 함수가 호출된다.
+        Print<string>("ABCDEF");
+        Print<float>(45.35f);
+
+        abc.var = "Edd"; // 자료형이 통일되면 사용 가능하다.
+        print(abc.var);
+
+        abc.array = new string[4];
+        abc.array[0] = "Godot";
+        print(abc.array[0]);
+
+        def.var = 45;
+        print(def.var);
+    }
+}
