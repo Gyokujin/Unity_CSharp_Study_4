@@ -1,0 +1,39 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Record
+{
+    public int[] temp = new int[5];
+
+    public int this[int index] // indexer : this의 이름으로 프로퍼티를 형성한다.
+    {
+        get 
+        { 
+            if (index >= temp.Length) // 프로퍼티로 제약을 둘 수 있다.
+            {
+                Debug.Log("인덱스가 너무 큽니다.");
+                return 0;
+            }
+            else
+            {
+                return temp[index];
+            }
+        } 
+        set { if (index >= temp.Length) Debug.Log("인덱스의 범위를 초과 하였습니다."); else temp[index] = value; }
+    }
+}
+
+public class Indexer : MonoBehaviour
+{
+    Record record = new Record();
+
+    void Start()
+    {
+        record[2] = 5;
+        print(record[2]);
+
+        record[5] = 4;
+        print(record[5]);
+    }
+}
