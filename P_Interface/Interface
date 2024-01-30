@@ -1,0 +1,38 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public abstract class A : MonoBehaviour
+{
+    public int a;
+    abstract public void Abc();
+}
+
+interface ITest // Interface : 다중 상속이 가능하다. 뼈대만 제공하는게 가능하다.
+{
+    void Bbc();
+
+    // public int b; // 인터페이스는 함수, 프로퍼티, 인덱서, 이벤트의 선언만 가능하다.
+
+    int SalaryP { get; set; }
+}
+
+interface ITest2 : ITest
+{
+
+}
+
+public class Interface : A, ITest2 // 클래스 상속은 하나만 가능하다. 대신 인터페이스는 다중 상속이 가능하다.
+{
+    public int SalaryP{ get; set; }
+
+    public override void Abc() // 클래스는 재정의시 override가 필요하다.
+    {
+
+    }
+
+    public void Bbc() // 인터페이스는 override가 생략된다.
+    {
+
+    }
+}
