@@ -1,0 +1,26 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ActionFunc : MonoBehaviour
+{
+    int sum = 0;
+
+    delegate void MyDelegate<T1, T2>(T1 a, T2 b);
+    MyDelegate<int, int> myDelegate;
+
+    Action<int, int> myDelegate2; // Action : 델리게이트 선언 없이 한 줄로 델리게이트의 기능을 가진다. 반환타입이 없을때 사용한다(void). using System 선언이 필요하다.
+    Func<int, int, string> myDelegate3; // Func : 반환타입이 있는 델리게이트 선언시에 사용한다.
+
+    void Start()
+    {
+        myDelegate2 = (int c, int d) => { sum = c + d; };
+        myDelegate2(16, 4);
+        print("두 수의 합은 " + sum);
+
+        myDelegate3 = (int a, int b) => { int sum = a + b; return sum + "이 리턴되었습니다."; };
+        print(myDelegate3(3, 15));
+        // myDelegate3(3, 5);
+    }
+}
