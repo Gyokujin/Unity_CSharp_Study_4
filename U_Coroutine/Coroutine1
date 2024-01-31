@@ -1,0 +1,52 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Coroutine1 : MonoBehaviour
+{
+    Coroutine myCoroutine1;
+    Coroutine myCoroutine2;
+
+    private IEnumerator myCoroutine3;
+
+    void Start()
+    {
+        myCoroutine1 = StartCoroutine(LoopA()); // 코루틴 실행을 변수로 만들수도 있다.
+        StartCoroutine("LoopB"); // 일반적인 함수는 순차적으로 진행하여 LoopA가 끝나면 LoopB가 실행된다. 문자열로 코루틴 실행이 가능하다. (대신 매개변수는 1개로 제한된다)
+        StartCoroutine(Stop());
+
+        myCoroutine3 = LoopB(); // 코루틴 함수를 변수로 담을수 있다.
+        // StartCoroutine(myCoroutine3);
+    }
+
+    #region Loop
+    IEnumerator LoopA() // 코루틴은 병렬 처리로 함수를 실행시켜 도중에 다른 함수도 같이 실행할 수 있게 한다.
+    {
+        for (int i = 0; i < 100; i++)
+        {
+            print("i의 값 = " + i);
+            yield return new WaitForSeconds(1f); // 해당 시간만큼 지연시킨다.
+        }
+    }
+
+    IEnumerator LoopB()
+    {
+        for (int x = 0; x < 100; x++)
+        {
+            print("x의 값 = " + x);
+            yield return new WaitForSeconds(1f);
+        }
+    }
+    #endregion Loop
+
+    IEnumerator Stop()
+    {
+        yield return new WaitForSeconds(2f);
+        StopCoroutine(myCoroutine1); // 실행중인 코루틴을 중지한다.
+
+        yield return new WaitForSeconds(1f);
+        StopCoroutine("LoopB");
+
+        // StopAllCoroutines(); // 동작중인 모든 코루틴을 중지한다.
+    }
+}
