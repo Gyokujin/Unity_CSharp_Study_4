@@ -1,0 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Lambda2 : MonoBehaviour
+{
+    delegate void MyDelegate<T>(T a, T b);
+    MyDelegate<int> myDelegate;
+
+    void Start()
+    {
+        myDelegate += (int a, int b) => print(a + b); // 람다식
+        myDelegate += (int c, int d) => print(c - d);
+
+        myDelegate(16, 4);
+        myDelegate(12, 3);
+    }
+}
